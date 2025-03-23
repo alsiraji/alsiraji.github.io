@@ -1,56 +1,86 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background: #1a1a2e; /* Dark background */
+    color: #f8f9fa; /* Light text */
 }
 
-header {
-    background: #35424a;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-h1 {
-    margin: 0;
-}
-
-.profile-summary {
-    padding: 20px;
-    text-align: center;
-}
-
-.profile-picture {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-}
-
-.projects {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.project {
-    margin-bottom: 20px;
-}
-
-.project-image {
-    width: 100%;
-    border-radius: 8px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
+/* Header Background */
+.header-bg {
+    background: url('background.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 120px 20px;
     position: relative;
-    bottom: 0;
+}
+
+/* Dark overlay for better text contrast */
+.header-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Profile Image */
+.profile-container {
+    position: relative;
+    z-index: 2;
+}
+
+.profile-img {
+    width: 300px;  /* Bigger profile picture */
+    height: 400px; /* Rectangular shape */
+    border: 8px solid white; /* Thicker frame */
+    border-radius: 15px; /* Slightly rounded corners */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+
+/* Contact Links */
+.contact-link {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    color: #ffcc00;
+}
+
+/* Project Section */
+.project-box {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    margin-bottom: 50px;
+    padding: 20px;
+    background: #222a3d; /* Darker background for contrast */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.project-info img:first-of-type {
+    width: 100%; /* Ensure the first image takes up all available space */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure it covers the area without distortion */
+}
+
+.project-info img:last-of-type {
+    width: 100%; /* Make the second image fill the width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Set a maximum height to keep uniformity */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+video {
+    width: 100%; /* Video takes up full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    background: #111;
 }
